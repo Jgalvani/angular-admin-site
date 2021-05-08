@@ -1,0 +1,84 @@
+.buttons {
+  height: 80%;
+  margin: 15px 15px 0 15px;
+}
+
+.category-button {
+  width: 50%;
+  height: 30%;
+  background-color: #fff;
+
+  &:hover {
+    background-color: rgb(199, 252, 232);
+    transition: background-color .15s;
+  }
+
+  &.active {
+    background-color: rgb(137, 149, 252);
+  }
+}
+
+.title {
+  text-align: center;
+  font-weight: bold;
+}
+
+// Modal
+.display {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal-body {
+  z-index: 2;
+  padding: 5px;
+  background-color: #fff;
+  border: solid 1px rgba(0,0,0,0.6);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  overflow-y: auto;
+}
+
+.modal-background {
+  z-index: 1;
+  background-color: rgba(0,0,0,0.1);
+  position:fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+// Form
+.control {
+  margin-bottom: 20px;
+
+  .form-label {
+    font-weight: bold;
+  }
+
+  .form-input {
+    display: block;
+    margin: 5px;
+    width: 95%;
+    border: solid 1px rgba(0,0,0,.5);
+    padding: 3px;
+
+    &.description {
+      height: 40px;
+    }
+
+    &.image {
+      border: none;
+    }
+  }
+}

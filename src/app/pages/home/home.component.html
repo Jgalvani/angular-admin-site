@@ -1,0 +1,7 @@
+<app-header></app-header>
+
+<h3>List of Products</h3>
+
+<button class="add-button" (click)="openAddProductModal()">Add product</button>
+
+<app-table [data]="data" (modalEmitter)="openActionProductModal($event)"></app-table>

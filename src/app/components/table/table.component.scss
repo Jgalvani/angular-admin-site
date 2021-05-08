@@ -1,0 +1,35 @@
+.table {
+  overflow-x: auto;
+
+  table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    vertical-align: top;
+    border-color: #dee2e6;
+  }
+
+  tr, tbody, thead, tfoot, th, td {
+    padding: 5px;
+    text-align: center;
+  }
+
+  tbody tr.dark {
+    background-color: lavender;
+  }
+
+  thead {
+    vertical-align: bottom;
+  }
+
+  th {
+      border-color: lightseagreen;
+      border-style: solid;
+      border-width: 0 0 1px 0;
+  }
+
+  .modal-button {
+    border: none;
+    background-color: rgba(0,0,0,0);
+  }
+}

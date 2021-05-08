@@ -1,0 +1,84 @@
+<div #background class="modal-background hidden">
+
+  <div #modal *ngIf="isCategorySet" class="modal-body">
+    <div class="title">Formulaire</div>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+      <div class="control">
+        <label class="form-label" for="name">Name</label>
+        <input class="form-input" id="name" formControlName="name" type="text">
+
+        <div *ngIf="form.controls.name.touched && form.controls.name.invalid" class="alert">
+          <div *ngIf="form.controls.name.errors?.required">Name is required.</div>
+        </div>
+      </div>
+
+      <div class="control">
+        <label class="form-label" for="description">Description</label>
+        <textarea
+          class="form-input description"
+          id="description"
+          formControlName="description"
+        ></textarea>
+
+        <div *ngIf="form.controls.description.touched && form.controls.description.invalid" class="alert">
+          <div *ngIf="form.controls.name.errors?.required">Description is required.</div>
+        </div>
+      </div>
+
+      <div class="control">
+        <label class="form-label" for="price">Price</label>
+        <input class="form-input" id="price" formControlName="price" type="number">
+
+        <div *ngIf="form.controls.price.touched && form.controls.price.invalid" class="alert">
+          <div *ngIf="form.controls.price.errors?.required">Price is required.</div>
+        </div>
+      </div>
+
+      <div class="control">
+        <label class="form-label" for="stock">Stock</label>
+        <input class="form-input" id="stock" formControlName="stock" type="number">
+
+        <div *ngIf="form.controls.stock.touched && form.controls.stock.invalid" class="alert">
+          <div *ngIf="form.controls.stock.errors?.required">Stock is required.</div>
+        </div>
+      </div>
+
+      <div class="control">
+        <label class="form-label" for="image">Image</label>
+        <div *ngIf="product.image && !form.controls.image.dirty">{{ product.image }}</div>
+        <input
+          class="form-input image"
+          id="image"
+          formControlName="image"
+          type="file"
+        >
+      </div>
+
+      <div class="buttons">
+        <button (click)="onCancel()">cancel</button>
+        <button type="submit" >submit</button>
+      </div>
+
+    </form>
+
+
+  </div>
+
+  <div #modal *ngIf="!isCategorySet" class="modal-body">
+    <div class="title">Categories</div>
+
+    <div class="buttons">
+      <button
+        class="category-button"
+        [ngClass]="{ 'active': product?.category === category.id }"
+        *ngFor="let category of categoriesObs | async; let i = index;"
+        (click)="setCategoryId(category.id)"
+      >
+        {{ category.name }}
+      </button>
+    </div>
+  </div>
+
+</div>

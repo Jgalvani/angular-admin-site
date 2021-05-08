@@ -1,0 +1,38 @@
+<div class="container">
+
+  Lines per page:
+  <select (change)="changePageSize($event)">
+    <option *ngFor="let size of pageSizes" [value]="size">
+      {{ size }}
+    </option>
+  </select>
+
+  <span class="line-info">Lines {{ sliceValues.start }}-{{ sliceValues.end }}</span>
+  <span class="page-info">Page: {{ page }}/{{ lastPage }}</span>
+
+  <ul class="pagination">
+    <li class="page-item">
+      <button class="page-link inactive" (click)="displayFirstPage()"><<</button>
+    </li>
+
+    <li class="page-item">
+      <button class="page-link inactive" (click)="displayPreviousPage()">Previous</button>
+    </li>
+
+    <li class="page-item" *ngFor="let num of buttonRange">
+      <button
+      class="page-link"
+      [ngClass]="{ 'active': num === page, 'inactive': num !== page }"
+      (click)="changePage(num)"
+    >{{ num }}</button>
+    </li>
+
+    <li class="page-item">
+      <button class="page-link inactive" (click)="displayNextPage()">Next</button>
+    </li>
+
+    <li class="page-item">
+      <button class="page-link inactive" (click)="displayLastPage()">>></button>
+    </li>
+  </ul>
+</div>

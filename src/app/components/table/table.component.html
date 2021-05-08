@@ -1,0 +1,28 @@
+<app-upsert-product-modal></app-upsert-product-modal>
+<div class="table">
+  <table>
+
+    <thead>
+      <tr>
+        <th>Actions</th>
+        <th *ngFor="let name of colNames;">{{ name }}</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr
+        [ngClass]="{'dark': i % 2}"
+        *ngFor="let item of tableData | slice:sliceValues.start:sliceValues.end; let i = index;"
+      >
+        <td>
+          <button class="modal-button" (click)="openModal(item)">...</button>
+          <app-action-product-modal style="position:relative" [product]="item"></app-action-product-modal>
+        </td>
+        <td *ngFor="let name of colNames;">{{ item[name] }}</td>
+      </tr>
+    </tbody>
+
+  </table>
+</div>
+
+<app-pagination [length]="length" (sliceEmitter)="getSlice($event)"></app-pagination>

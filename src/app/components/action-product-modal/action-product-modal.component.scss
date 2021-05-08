@@ -1,0 +1,33 @@
+.display {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal {
+  z-index: 1;
+  position: absolute;
+  top: -17px;
+  left: 2px;
+  width: 110px;
+}
+
+.modal-body {
+  background: #fff;
+  padding: 5px;
+  border: solid 1px rgba(0,0,0,0.6);
+
+  button {
+    border: none;
+    background-color: #fff;
+    width: 80px;
+    height: 20px;
+
+    &:hover {
+      background-color:lightgrey;
+      transition: background-color 0.15s;
+    }
+  }
+}

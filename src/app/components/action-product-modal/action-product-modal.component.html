@@ -1,0 +1,14 @@
+<div #modal class="modal hidden">
+
+  <div *ngIf="!warning" class="modal-body">
+    <div><button (click)="edit()">Edit</button></div>
+    <div><button (click)="delete()">Delete</button></div>
+  </div>
+
+  <div *ngIf="warning" class="modal-body">
+    Are you sure ?
+    <div><button (click)="delete(true)">Yes</button></div>
+    <div><button (click)="delete(false)">Non</button></div>
+  </div>
+
+</div>
