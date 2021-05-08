@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Environment variables
 
-If you want to use dotenv to load your environment variables create a ".env" file in the root directory then run "npm start".
+If you want to use dotenv to load your environment variables create a `.env` file in the root directory then run `npm start`.
 
 ## Development server
 
